@@ -8,6 +8,8 @@
 			"args": [
 				"-g",
 				"${file}",
+				"${fileDirname}\\parser.c",
+				"${fileDirname}\\requestAndRead.c",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 			],
