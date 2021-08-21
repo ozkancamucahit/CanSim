@@ -55,5 +55,7 @@ void print_ReqAndResponse( uint8_t*, uint8_t* );
 
 void initMessage ( message_t*, uint8_t, uint8_t*, uint8_t*, uint8_t*);
 
+void terminateLine(char * line);
+
 
 #endif

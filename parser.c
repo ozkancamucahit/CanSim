@@ -228,12 +228,14 @@ uint8_t* getReq ( char* line, uint8_t* noOfReqBytes)
 
     strcpy ( temp, line);
     
-    #ifdef __linux__
-    temp[ tempLen -1] = '\0';
-    #elif   __WIN32
-    temp[ tempLen -2] = '\0';
+    // #ifdef __linux__
+    // temp[ tempLen -1] = '\0';
+    // #elif   __WIN32
+    // temp[ tempLen -2] = '\0';
 
-    #endif
+    // #endif
+
+    terminateLine(temp);
 
     uint8_t numberOfBytes = getNumberOfReqBytes( line);
     *noOfReqBytes = numberOfBytes;
@@ -307,3 +309,12 @@ void print_ReqAndResponse( uint8_t* req, uint8_t* res)
     printf("\n");
 
 }
+
+void terminateLine(char * line)
+{
+    while ( *line++ )
+        if ( (*line == '\n' ) || (*line == '\r') ){
+            *line= '\0';
+        }
+}
+
